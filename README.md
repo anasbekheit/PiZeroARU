@@ -1,2 +1,4 @@
-# PiZeroARU
-AIMS South Africa AI for Science ARU - Machine Learning for Ecology Course
+# PiZero ARU
+
+AIMS South Africa AI for Science
+For the: Machine Learning for Ecology Course
