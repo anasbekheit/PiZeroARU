@@ -1,0 +1,17 @@
+{
+  "recording_settings": {
+    "_comment": "pyaudio.paInt16 resolves to 8 ",
+    "format": 8,
+    "channels": 1,
+    "rate": 44100,
+    "chunk": 4096,
+    "duration": 5
+  },
+
+  "logging_settings": {
+    "log_path": "./Recordings/logs",
+    "log_file": "recording",
+    "extension": "log",
+    "level": "INFO"
+  }
+}
