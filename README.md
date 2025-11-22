@@ -5,19 +5,54 @@ For the: Machine Learning for Ecology Course
 
 ![AIMS-ARU](https://github.com/AIMS-Research/PiZeroARU/assets/15357701/99434d2e-79ae-4299-8e68-74d74b7a2038)
 
-
 ## Getting Started
-- Prerequisites: Ensure you have Python 3 and PyAudio installed.
-- Download: Clone or download this repository.
-- Run: Open a terminal in the project directory and execute: `python ARU.py`
+
+### Prerequisites
+
+- `uv` package manager (recommended)
+
+### Installation
+
+```bash
+uv sync
+```
+
+### Running the Application
+
+```bash
+# Using uv
+uv run main.py
+```
 
 ## How it Works
-- Upon starting the script for the first time a new `session` is started with an id `timestamp`.
-- Device: The program automatically detects your `USB Audio Device`.
-- The program starts recording after detecting your `USB Audio Device`
-- `config.json`: Specify recording duration and other configuration.
+
+- **Session Management**: Each run starts a new `session` with a unique timestamp ID
+- **Audio Device Detection**: Automatically detects your audio device (configurable via `config.yaml`)
+- **Recording**: Starts recording audio immediately upon device detection
+
+## Configuration
+
+Edit `config.yaml` to customize:
+
+- **Audio settings**: Sample rate, channels, duration, device selection
+- **Paths**: Output directories for recordings and logs
+- **Logging formats**: Logging and date/time formats
+
+Example:
+
+```yaml
+audio:
+  rate: 44100
+  channels: 1
+  duration_sec: 10
+  device_match: "default"
+
+paths:
+  recordings: "recordings"
+  logging: "logs"
+```
 
 ## Outputs
-- The output directory is `Recordings`
-- The program outputs a `./logs/recordings-$session$.logs` file for each session
-- The program outputs `./$YYYY-HH-DD$/$HH$/$timestamp$.wav` files for each recordings.
+
+- **Recordings**: Stored in `./recordings/$YYYY-MM-DD$/$HH$/$timestamp$.wav`
+- **Logs**: Persistent logs in `./logs/pizeroaru.log`

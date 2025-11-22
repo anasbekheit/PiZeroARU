@@ -1,0 +1,45 @@
+[project]
+name = "pizeroaru"
+version = "1.0.0"
+description = "Sounddevice wrapper for deploying fault-tolerant recorders."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.3.5",
+    "sounddevice>=0.5.3",
+    "pyyaml>=6.0",
+    "types-pyyaml>=6.0.12.20250915",
+    "types-cffi>=1.17.0.20250915",
+    "cffi>=2.0.0",
+    "pydantic>=2.12.5",
+]
+
+[dependency-groups]
+dev = ["mypy>=1.18.2", "ruff>=0.14.6"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_return_any = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade (modernize syntax)
+    "N",   # pep8-naming
+    "SIM", # flake8-simplify
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

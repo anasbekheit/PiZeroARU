@@ -1,0 +1,17 @@
+audio:
+  rate: 44100
+  channels: 1
+  duration_sec: 60
+  sample_width: 2
+  max_queue_size: 1000
+  device_match: "default"
+  retry_sec: 5
+
+paths:
+  recordings: "recordings"
+  logging: "logs"
+
+formats:
+  log: "%(asctime)s - %(levelname)s - %(message)s"
+  date: "%Y-%m-%d"
+  time: "%H:%M:%S"
